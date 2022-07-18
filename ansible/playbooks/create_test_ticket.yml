@@ -4,10 +4,6 @@
   tasks:
     - name: Create a change request
       servicenow.itsm.incident:
-        instance:
-          host: "{{ sn_host }}"
-          username: "{{ sn_user }}"
-          password: "{{ sn_password }}"
         state: new 
         caller: "{{ sn_username }}"
         short_description: "Ansible basic test incident"
