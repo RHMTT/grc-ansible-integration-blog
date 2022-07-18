@@ -1,0 +1,17 @@
+---
+- name: Create a Service Now basic ticket
+  hosts: create_ticket
+  tasks:
+    - name: Create a change request
+      servicenow.itsm.incident:
+        state: new 
+        caller: "{{ sn_username }}"
+        short_description: "Ansible basic test incident"
+        description:
+          "creatint a basic incident ticket fron Ansible"
+        impact: low
+        urgency: low
+      register: new_incident
+
+    - debug:
+        var: new_incident.record
