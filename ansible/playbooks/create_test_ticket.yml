@@ -1,6 +1,7 @@
 ---
 - name: Create a Service Now basic ticket
   hosts: localhost
+  gather_facts: false
   tasks:
     - name: Create a change request
       servicenow.itsm.incident:
